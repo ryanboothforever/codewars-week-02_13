@@ -60,3 +60,43 @@ function basicOp(operation, value1, value2){
   return eval(value1 + operation +value2)
 }
 
+// 8kyu: Given a year, return the century it is in. SKIPPED
+
+function century(year) {
+    year=year.toString()
+  if(year.endsWith("1")){
+      return year
+  } else{
+      return false
+  }
+}
+
+// 8 kyu: Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits. 
+
+const isDivisible=(n, x, y)=> (n%x===0) && (n%y===0) ? true : false;
+
+// 8kyu: We need a function that can transform a string into a number. What ways of achieving this do you know?
+
+var stringToNumber = function(str){
+  str = parseInt(str)
+  return str;
+}
+
+// 8 kyu: Write a function findNeedle() that takes an array full of junk but containing one "needle". After your function finds the needle it should return a message (as a string) that says: "found the needle at position " plus the index it found the needle.
+
+function findNeedle(haystack) {
+  needlePosition = haystack.indexOf("needle")
+  return `found the needle at position ${needlePosition}`
+}
+
+// 8 kyu: Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+// My version followed by shorter version
+function digitize(n) {
+    n = n.toString()
+    n = n.split("").reverse().join("").split("")
+    n = n.map(element => Number(element))
+    return n;
+}
+function digitize(n) {
+  return String(n).split('').map(Number).reverse()
+}
